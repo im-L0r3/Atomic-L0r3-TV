@@ -4,25 +4,25 @@
 
 
 WHAT IS THIS SCRIPT?
-	- Reads a directory of TV show files (must be .m4v)
-	- Embeds data and art from themoviedb.org API (TMDB) into the files
-	- Note: This is built with too many comments so others can make their own version easily 
+- Reads a directory of TV show files (must be .m4v)
+- Embeds data and art from themoviedb.org API (TMDB) into the files
+- Note: This is built with too many comments so others can make their own version easily 
 
 
 USING FLAGS:
-For new files, when episode number is accurate:			-f (full)
-For new files, when episode number is not verified:		-l (lite)
-Reprocessing files when episode number is accurate:		-f -r (full and reprocess)
-Dry run													-d
+- For new files, when episode number is accurate:		-f (full)
+- For new files, when episode number is not verified:		-l (lite)
+- Reprocessing files when episode number is accurate:		-f -r (full and reprocess)
+- Dry run							-d
 
 
 -d: DRY RUN
-		Wont write to file
-		Can be used with -f or -l
+- Wont write to file
+- Can be used with -f or -l
 
 -f: FULL RUN
-		Use when the episode number is accurate (fetches/embeds season and episode specific data)
-		WRITES COMMENTS:
+Use when the episode number is accurate (fetches/embeds season and episode specific data)
+WRITES COMMENTS:
 			Source: $OrginalSource
 			Extracter: $diskExtracter
 			Encoder: $fileEncoder
