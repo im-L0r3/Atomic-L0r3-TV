@@ -11,7 +11,7 @@ USING FLAGS:
 For new files, when episode number is accurate:			-f (full)  
 For new files, when episode number is not verified:		-l (lite)  
 Reprocessing files when episode number is accurate:		-f -r (full and reprocess)  
-Dry run													-d  
+Dry run:													-d  
   
   
 -d: DRY RUN  
@@ -27,7 +27,7 @@ Dry run													-d
 			- Who: $whoEncode  
 			- Vid 0:0 $movieVidCodec $movieVidRate/s Res:$movieRes(HD:$hdState)  
 			- $audOneAll  
-			- $audTwoAll
+			- $audTwoAll  
 			- TMDB: $tmdbShowId  
 			- Script: $ver  
 		WRITES ATOMS:  
@@ -80,14 +80,14 @@ Dry run													-d
 -l: LITE RUN  
 		Use when the episode number has NOT been verified (embeds only season specific data)  
 		WRITES COMMENT:  
-			- Source: $OrginalSource
-			- Who: $whoEncode
-			- Vid 0:0 $movieVidCodec $movieVidRate/s Res:$movieRes(HD:$hdState)
-			- $audOneAll
-			- $audTwoAll
-			- TMDB: $tmdbShowId
-			- Script: $ver
-		WRITES ATOMS
+			- Source: $OrginalSource  
+			- Who: $whoEncode  
+			- Vid 0:0 $movieVidCodec $movieVidRate/s Res:$movieRes(HD:$hdState)  
+			- $audOneAll  
+			- $audTwoAll  
+			- TMDB: $tmdbShowId  
+			- Script: $ver  
+		WRITES ATOMS  
 			--stik "TV Show" \
 			--encodedBy "$whoEncode" \
 			--hdvideo "$hdState" \
@@ -328,11 +328,12 @@ v5.0.0 (The one about improving this project again after a couple years)
 	Moved from 4.x versioning to 5.x  
   
   
-### BUG TODO ###
+### BUG TODO ####
 No known bugs at the moment  
   
   
-###  NEW FEATURE IDEAS ###
+### NEW FEATURE IDEAS ####
+If TBDB has lenght for TV shows (it does for movies) compainr that to the files lenght and stop if not ~match  
 Saftey stop if no season number  
 Safety stop if no episode number  
-When dry run, display show name and TMDB ID before quitting  
+When dry run, display show name and TMDB ID before quitting
