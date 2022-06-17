@@ -2,37 +2,36 @@
  BASH script that embeds .m4v files with metadata and art from themoviedb.org API using AtomicParsley
 
 
-
-WHAT IS THIS SCRIPT?
-- Reads a directory of TV show files (must be .m4v)
-- Embeds data and art from themoviedb.org API (TMDB) into the files
-- Note: This is built with too many comments so others can make their own version easily 
-
-
-USING FLAGS:
-- For new files, when episode number is accurate:		-f (full)
-- For new files, when episode number is not verified:		-l (lite)
-- Reprocessing files when episode number is accurate:		-f -r (full and reprocess)
-- Dry run							-d
-
-
--d: DRY RUN
-- Wont write to file
-- Can be used with -f or -l
-
+WHAT IS THIS SCRIPT?  
+	- Reads a directory of TV show files (must be .m4v)
+	- Embeds data and art from themoviedb.org API (TMDB) into the files
+	- Note: This is built with too many comments so others can make their own version easily 
+  
+  
+USING FLAGS:  
+For new files, when episode number is accurate:			-f (full)  
+For new files, when episode number is not verified:		-l (lite)  
+Reprocessing files when episode number is accurate:		-f -r (full and reprocess)  
+Dry run													-d  
+  
+  
+-d: DRY RUN  
+		Wont write to file  
+		Can be used with -f or -l  
+  
 -f: FULL RUN  
-Use when the episode number is accurate (fetches/embeds season and episode specific data)
-WRITES COMMENTS:
-			Source: $OrginalSource
-			Extracter: $diskExtracter
-			Encoder: $fileEncoder
-			Who: $whoEncode
-			Vid 0:0 $movieVidCodec $movieVidRate/s Res:$movieRes(HD:$hdState)
-			$audOneAll
+		Use when the episode number is accurate (fetches/embeds season and episode specific data)  
+		WRITES COMMENTS:  
+			Source: $OrginalSource  
+			Extracter: $diskExtracter  
+			Encoder: $fileEncoder  
+			Who: $whoEncode  
+			Vid 0:0 $movieVidCodec $movieVidRate/s Res:$movieRes(HD:$hdState)  
+			$audOneAll  
 			$audTwoAll
-			TMDB: $tmdbShowId
-			Script: $ver
-		WRITES ATOMS:
+			TMDB: $tmdbShowId  
+			Script: $ver  
+		WRITES ATOMS:  
 			--stik "TV Show" \
 			--encodingTool "$fileEncoder" \
 			--encodedBy "$whoEncode" \
@@ -50,18 +49,18 @@ WRITES COMMENTS:
 			--genre "$tmdbGenre0" \
 			--artwork "$artFile" \
 			--rDNSatom "$castCrewXml" name=iTunMOVI domain=com.apple.iTunes
-
--r: REPROCESS RUN
-		Use with -f for media that the episode is accurate, but the extractor and encoder are unknown
-		WRITES COMMENTS:
-			Source: $OrginalSource
-			Who: $whoEncode
-			Vid 0:0 $movieVidCodec $movieVidRate/s Res:$movieRes(HD:$hdState)
-			$audOneAll
-			$audTwoAll
-			TMDB ID: $tmdbShowId
-			Script: $ver"
-		WRITES ATOMS:
+  
+-r: REPROCESS RUN  
+		Use with -f for media that the episode is accurate, but the extractor and encoder are unknown  
+		WRITES COMMENTS:  
+			Source: $OrginalSource  
+			Who: $whoEncode  
+			Vid 0:0 $movieVidCodec $movieVidRate/s Res:$movieRes(HD:$hdState)  
+			$audOneAll  
+			$audTwoAll  
+			TMDB ID: $tmdbShowId  
+			Script: $ver"  
+		WRITES ATOMS:  
 			--stik "TV Show" \
 			--encodedBy "$whoEncode" \
 			--hdvideo "$hdState" \
@@ -101,7 +100,7 @@ WRITES COMMENTS:
 			--artwork "$artFile"
 
 
-EXAMPLE TESTED FILE NAME FORMATS:
+TESTED FILE NAME FORMAT EXAMPLES:
 	The X-Files s02x11.m4v
 	The X-Files s02x11 Excelsis Dei.m4v
 
@@ -124,8 +123,14 @@ DISPLAY OF DATA TESTED WITH PLAYERS:
 
 ##### CHANGE LOG #########################################################################
 
+v5.8.3
+	xxxxxxxx
+
+v5.8.2
+	Added what run flags were used to comment
+	Added additional safety check for null TMDB show overview(description)
+
 v5.8.1
-	Added additional safety check for null TBDB show overview(description)
 	Minor console readability updates
 	Fixed bug where comments for non -r runs where showing in console
 	Fixed bug reading the new -r flag
@@ -331,10 +336,7 @@ No known bugs at the moment
 
 ##### ADD FEATURES #######################################################################
 
-Add flgas that were used for the run to the comment
-
 Saftey stop if no season number	(test with Frank Lloyd)
 Safety stop if no episode number
 
 When dry run, display show name and TMDB ID before quitting
-
