@@ -328,11 +328,11 @@ v5.0.0 (The one about improving this project again after a couple years)
 	Moved from 4.x versioning to 5.x  
   
   
-### BUG TODO ####
+### BUG TODO ###
 No known bugs at the moment  
   
   
-### ADD FEATURES ####
+###  NEW FEATURE IDEAS ###
 Saftey stop if no season number  
 Safety stop if no episode number  
 When dry run, display show name and TMDB ID before quitting  
