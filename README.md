@@ -104,7 +104,7 @@ TESTED FILE NAME FORMAT EXAMPLES:
 	The X-Files s02x11 Excelsis Dei.m4v  
 
 
-##### DEV AND TEST #####  
+### DEV AND TEST ###  
   
 SCRIPT HAS BEEN FULLY TESTED UNDER:  
 	- MacOS 11.6.6 and 12.3.1  
@@ -120,7 +120,7 @@ DISPLAY OF DATA TESTED WITH PLAYERS:
 	- iTunes on Windows (last version produced)
 
 
-##### CHANGE LOG #####  
+### CHANGE LOG ###  
   
 v5.8.3  
 	xxxxxxxx  
@@ -328,6 +328,11 @@ v5.0.0 (The one about improving this project again after a couple years)
 	Moved from 4.x versioning to 5.x  
   
   
-##### BUG TODO ######
+### BUG TODO ####
 No known bugs at the moment  
-
+  
+  
+### ADD FEATURES #### 
+Saftey stop if no season number  
+Safety stop if no episode number  
+When dry run, display show name and TMDB ID before quitting  
