@@ -20,7 +20,7 @@ USING FLAGS:
 - Wont write to file
 - Can be used with -f or -l
 
--f: FULL RUN
+-f: FULL RUN  
 Use when the episode number is accurate (fetches/embeds season and episode specific data)
 WRITES COMMENTS:
 			Source: $OrginalSource
